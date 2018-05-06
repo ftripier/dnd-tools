@@ -63,7 +63,7 @@ const BarbarianGenericLast = [
   'Fall'
 ];
 
-const BarbarianMaleLast = BarbarianGenericLast([
+const BarbarianMaleLast = BarbarianGenericLast.concat([
   'King'
 ]);
 
