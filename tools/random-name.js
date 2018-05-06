@@ -20,6 +20,57 @@ const HumanNames = [
   'Spanish'
 ]
 
+const BarbarianFirst = [
+  'Moon',
+  'Willow',
+  'Vine',
+  'Bluff',
+  'Thunder',
+  'Rock',
+  'Crow',
+  'Gold',
+  'Iron',
+  'Root',
+  'Mountain',
+  'Dragon',
+  'Giant',
+  'Wood',
+  'Snow',
+  'Ice',
+  'Wilted',
+  'Ox',
+  'Bear',
+  'Wolf',
+  'Mammoth',
+  'Tiger',
+  'Dungeon'
+]
+
+const BarbarianGenericLast = [
+  'Bough',
+  'Waker',
+  'Rider',
+  'Hunter',
+  'Crest',
+  'Farmer',
+  'Singer',
+  'Whisper',
+  'Scream',
+  'Walker',
+  'Spring',
+  'Winter',
+  'Summer',
+  'Fall'
+];
+
+const BarbarianMaleLast = BarbarianGenericLast([
+  'King'
+]);
+
+const BarbarianFemaleLast = BarbarianGenericLast.concat([
+  'Queen'
+]);
+
 const race = process.argv[2].toLowerCase();
 const gender = process.argv[3].toLowerCase();
 
@@ -51,8 +102,29 @@ function chooseRandomly(names) {
   return names[randomChoice];
 }
 
-if (race === 'human') {
-  console.log(chooseRandomly(getHumanNames(gender)));
-} else {
-  console.log(chooseRandomly(getRaceNames(race, gender)));
+function generateBarbarianName(gender) {
+  const firstName = chooseRandomly(BarbarianFirst);
+  let lastName;
+  if (gender === 'female') {
+    lastName = chooseRandomly(BarbarianFemaleLast);
+  } else if (gender === 'male') {
+    lastName = chooseRandomly(BarbarianMaleLast);
+  } else {
+    lastName = chooseRandomly(BarbarianGenericLast);
+  }
+
+  return firstName + ' ' + lastName;
 }
+
+function pickName() {
+  switch (race) {
+    case 'human':
+      return chooseRandomly(getHumanNames(gender));
+    case 'barbarian':
+      return generateBarbarianName(gender);
+    default:
+      return chooseRandomly(getRaceNames(race, gender));
+  }
+}
+
+console.log(pickName());
