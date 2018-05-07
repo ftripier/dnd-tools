@@ -43,7 +43,12 @@ const BarbarianFirst = [
   'Wolf',
   'Mammoth',
   'Tiger',
-  'Dungeon'
+  'Dungeon',
+  'Raging',
+  'Dancing',
+  'Twisting',
+  'Singing',
+  'Eternal'
 ]
 
 const BarbarianGenericLast = [
@@ -60,15 +65,27 @@ const BarbarianGenericLast = [
   'Spring',
   'Winter',
   'Summer',
-  'Fall'
+  'Fall',
+  'Brook',
+  'River',
+  'Ocean',
+  'Tundra',
+  'Plain',
+  'Elk',
+  'Bear',
+  'Talent',
+  'Roar',
+  'Fight'
 ];
 
 const BarbarianMaleLast = BarbarianGenericLast.concat([
-  'King'
+  'King',
+  'Father'
 ]);
 
 const BarbarianFemaleLast = BarbarianGenericLast.concat([
-  'Queen'
+  'Queen',
+  'Mother'
 ]);
 
 const race = process.argv[2].toLowerCase();
