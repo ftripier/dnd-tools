@@ -75,17 +75,20 @@ const BarbarianGenericLast = [
   'Bear',
   'Talent',
   'Roar',
-  'Fight'
+  'Fight',
+  'Mate'
 ];
 
 const BarbarianMaleLast = BarbarianGenericLast.concat([
   'King',
-  'Father'
+  'Father',
+  'Groom'
 ]);
 
 const BarbarianFemaleLast = BarbarianGenericLast.concat([
   'Queen',
-  'Mother'
+  'Mother',
+  'Bride'
 ]);
 
 const race = process.argv[2].toLowerCase();
